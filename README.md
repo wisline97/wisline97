@@ -1,4 +1,4 @@
-### Hi there 👋<br/>
+### 안냐세요 👋<br/>
 ---
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=ersa56)](https://solved.ac/ersa56)
 
