@@ -1,4 +1,4 @@
-### 안냐세요 👋<br/>
+### 안녕하세요 솔직한 피드백을 통해 성장하는 안지선입니👋<br/>
 ---
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=ersa56)](https://solved.ac/ersa56)
 
