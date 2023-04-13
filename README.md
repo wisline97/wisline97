@@ -1,9 +1,5 @@
 ## 안녕하세요 솔직한 피드백을 통해 성장하는 안지선입니다 👋<br/>
 ---
-## 포트폴리오
-
-http://seoulstore.cafe24app.com/index
----
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=Python&logoColor=white">
 
