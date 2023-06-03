@@ -1,5 +1,3 @@
-## 안녕하세요 솔직한 피드백을 통해 성장하는 안지선입니다 👋<br/>
-##### 백준 1일 1문제 풀기 실천중🤓<br/>
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=Python&logoColor=white">
 ---
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=ersa56)](https://solved.ac/ersa56)
