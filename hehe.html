@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>야호 띄어쓰기 노가다 탈출</title>
+    <style>
+      @import url("https://webfontworld.github.io/pretendard/Pretendard.css");
+      body {
+        font-family: "Pretendard";
+        line-height: 1.2;
+      }
+      .input_lay {
+        width: 10%;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        function copy_oem() {
+            var copyTxt = document.getElementById("oem_variant_output");
+            navigator.clipboard.writeText(oem_variant_output.textContent);
+            alert("복사되었습니다.");
+        }
+
+        function copy_lg() {
+            var copyTxt = document.getElementById("lg_variant_output");
+            navigator.clipboard.writeText(lg_variant_output.textContent);
+            alert("복사되었습니다.");
+        }
+    
+        function trans_oem(){
+            var oem_variant = document.getElementById('oem_list').value;
+            var oem_variant_arr = [];
+            var count = oem_variant.length;
+
+            for (i = 0; i < count/2; i++) {
+                oem_variant_arr[i] = oem_variant[i+i]+oem_variant[i+i+1]
+            }
+            var output_oem = document.querySelector("#oem_variant_output")
+            output_oem.textContent = `dbus-send --print-reply --system --type=method_call --dest=vehicle.network.service /Ihu vehicle.network.service.ihu.SetSysVariantOptionSet array:byte:0x${oem_variant_arr[0]},0x${oem_variant_arr[1]},0x${oem_variant_arr[2]},0x${oem_variant_arr[3]},0x${oem_variant_arr[4]},0x${oem_variant_arr[5]},0x${oem_variant_arr[6]},0x${oem_variant_arr[7]},0x${oem_variant_arr[8]},0x${oem_variant_arr[9]},0x${oem_variant_arr[10]},0x${oem_variant_arr[11]}`;
+        }
+    
+        function trans_lg(){
+            var lg_variant = document.getElementById('lg_list').value;
+            var lg_variant_arr = [];
+            var count = lg_variant.length;
+
+            for (i = 0; i < count/2; i++) {
+                lg_variant_arr[i] = lg_variant[i+i]+lg_variant[i+i+1]
+            }
+            var output_lg = document.querySelector("#lg_variant_output")
+            output_lg.textContent = `dbus-send --print-reply --system --type=method_call --dest=vehicle.network.service /Ihu vehicle.network.service.ihu.SetAdditionalVariantInfo array:byte:0x${lg_variant_arr[0]},0x${lg_variant_arr[1]},0x${lg_variant_arr[2]},0x${lg_variant_arr[3]},0x${lg_variant_arr[4]},0x${lg_variant_arr[5]},0x${lg_variant_arr[6]},0x${lg_variant_arr[7]}`;
+        }
+  
+    
+    
+    </script>
+    <div id="center">
+      <h1>야호 띄어쓰기 노가다 탈출</h1>
+      <p>※주의※ 맨 앞에 띄어쓰기가 포함되지 않도록 주의하세요!</p>
+      <p>※주의※ 변환된 값이 뭔가 이상하다면 input 값을 다시 한 번 확인하세요!</p>
+      <div class="">
+        <div class="">
+          <p class="intro-title"><b>OEM Variant</b></p>
+          <input class="input_lay" id="oem_list" placeholder="여기에 입력해주세요"></input>
+          <button class="btn_lay" onclick="trans_oem()">변환</button>
+          <p id="oem_variant_output"></p>
+          <button onclick="copy_oem()">복사하기</button>
+        </div>
+        <br>
+
+        <div class="">
+          <p class=""><b>LG Variant</b></p>
+          <input class="input_lay" id="lg_list" placeholder="여기에 입력해주세요"></input>
+          <button class="btn_lay" onclick="trans_lg()">변환</button>
+          <p id="lg_variant_output" ></p>
+          <button onclick="copy_lg()">복사하기</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
