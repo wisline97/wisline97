@@ -74,7 +74,18 @@
       <h1>야호 띄어쓰기 노가다 탈출</h1>
       <p>※주의※ 맨 앞에 띄어쓰기가 포함되지 않도록 주의하세요!</p>
       <p>※주의※ 변환된 값이 뭔가 이상하다면 input 값을 다시 한 번 확인하세요!</p>
+      <br>
       <div class="">
+
+        <div class="">
+            <p class=""><b>Part Number</b></p>
+            <input class="input_lay" id="part_number" placeholder="여기에 입력해주세요"></input>
+            <button class="btn_lay" onclick="trans_pn()">변환</button>
+            <p id="partnumber_output" ></p>
+            <button onclick="copy_pn()">복사하기</button>
+        </div>
+        <br>
+
         <div class="">
           <p class="intro-title"><b>OEM Variant</b></p>
           <input class="input_lay" id="oem_list" placeholder="여기에 입력해주세요"></input>
@@ -91,19 +102,13 @@
           <p id="lg_variant_output" ></p>
           <button onclick="copy_lg()">복사하기</button>
         </div>
-
-          <div class="">
-            <p class=""><b>Part Number</b></p>
-            <input class="input_lay" id="part_number" placeholder="여기에 입력해주세요"></input>
-            <button class="btn_lay" onclick="trans_pn()">변환</button>
-            <p id="partnumber_output" ></p>
-            <button onclick="copy_pn()">복사하기</button>
-        </div>
-
+        <br>
 
         <p>rm -rf /ESP/systeminfo/*</p>
         <p>sync</p>
       </div>
     </div>
+    <br><br>
+    <p>ⓒJisun</p>
   </body>
 </html>
