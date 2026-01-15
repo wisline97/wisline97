@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>canoe..?</title>
+    <style>
+      @import url("https://webfontworld.github.io/pretendard/Pretendard.css");
+      body {
+        font-family: "Pretendard";
+        line-height: 1.2;
+      }
+      .input_lay {
+        width: 10%;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        function copy_oem() {
+            var copyTxt = document.getElementById("oem_variant_output");
+            navigator.clipboard.writeText(oem_variant_output.textContent);
+            alert("복사되었습니다.");
+        }
+
+        function trans_oem(){
+            var variant = document.getElementById('oem_list').value;
+            var variant_arr = variant.trim().split(" ");
+            var count = variant_arr.length;
+            var new_arr = [];
+            console.log(variant_arr)
+            var output_oem = document.querySelector("#oem_variant_output")
+            output_oem.textContent = `dbus-send --system --type=method_call --print-reply --dest=vehicle.network.service /Diag vehicle.network.service.Diag.generateASKKey array:byte:0x${variant_arr[0]},0x${variant_arr[1]},0x${variant_arr[2]},0x${variant_arr[3]},0x${variant_arr[4]},0x${variant_arr[5]},0x${variant_arr[6]},0x${variant_arr[7]}`;
+        }
+    </script>
+    <div id="center">
+      <h1>canoe..?</h1>
+      <p>※주의※ 변환된 값이 뭔가 이상하다면 input 값을 다시 한 번 확인하세요!</p>
+      <p>※주의※ 값을 입력 할 때 공백 외에 다른 문자열이 들어가지 않게 해주세요</p>
+      <p><b style="color: red;">안좋은 예 :</b> method return time=1293843872.151379 sender=:1.7 -> destination=:1.745 serial=3214 reply_serial=2 array of bytes [      6c 3a 75 ce aa ce 91 77   ]   int32 0</p>
+      <p><b style="color: blue;">올바른 예 :</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f4 00 6d 7b d8 82 19 04</p>
+      <br>
+      <div class="">
+        <div class="">
+          <p class=""><b>LG Variant</b></p>
+          <input class="input_lay" id="oem_list" placeholder="여기에 입력해주세요"></input>
+          <button class="btn_lay" onclick="trans_oem()">변환</button>
+          <p id="oem_variant_output" ></p>
+          <button onclick="copy_oem()">복사하기</button>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br><br>
+    <p>ⓒJisun</p>
+  </body>
+</html>
