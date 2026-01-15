@@ -67,7 +67,7 @@
             part_num = part_num_arr.join("");
 
             var output_part_num = document.querySelector("#partnumber_output")
-            output_part_num.textContent = `dbus-send --print-reply --system --type=method_call --dest=vehicle.network.service /Diag vehicle.network.service.Diag.setDatabyId uint32:0xf102 string:"LGE\u00a0\u00a0\u00a0\u00a0${part_num}"`;
+            output_part_num.textContent = `dbus-send --print-reply --system --type=method_call --dest=vehicle.network.service /Diag vehicle.network.service.Diag.setDatabyId uint32:0xf102 string:"LGE\u00a0\u00a0\u00a0 ${part_num}"`;
         }
     </script>
     <div id="center">
